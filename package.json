@@ -1,0 +1,25 @@
+{
+  "name": "triggerreactor-highlighter",
+  "displayName": "TriggerReactor Highlighter",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.76.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "triggerreactor",
+      "aliases": ["TriggerReactor", "triggerreactor"],
+      "extensions": [".trg"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "triggerreactor",
+      "scopeName": "source.trg",
+      "path": "./syntaxes/triggerreactor.tmLanguage.json"
+    }]
+  }
+}
