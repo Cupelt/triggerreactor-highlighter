@@ -3,18 +3,69 @@
 	"name": "TriggerReactor",
 	"patterns": [
 		{
+			"name": "entity.other.inherited-class.triggerreactor",
+			"match": "^\\s*#[A-Z|a-z]+"
+		},
+		{
+			"name" : "variable.parameter",
+			"match": "\\$\\w+"
+		},
+		{
+			"name": "entity.name.class.triggerreactor",
+			"match": "\\b(?<!\\.)[A-Z]\\w*\\("
+		},
+		{
+			"name": "variable.other.object.triggerreactor",
+			"match": "(?<![\\w$])[a-zA-Z_$][\\w$]*(?=\\s*\\.\\s*[\\w$]+)"
+		},
+		{
+			"name": "entity.name.function.triggerreactor",
+			"match": "([A-Za-z_$][\\w$]*)\\s*(\\()"
+		},
+		{
+			"begin": "(import|IMPORT)",
+			"beginCaptures": {
+				"0": { "name" : "storage.modifier.import.triggerreactor" }
+			},
+			"end": "(\\n|;)"
+		},
+		{
 			"include": "#keywords"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#constants-and-special-vars"
 		},
 		{
 			"include": "#strings"
 		}
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.triggerreactor",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+		"keywords":{
+			"patterns": [
+				{
+					"patterns": [
+						{
+							"name": "keyword.control.triggerreactor",
+							"match": "\\b(IF|ELSE|ELSEIF|ENDIF|IS|WHILE|ENDWHILE|FOR|ENDFOR|TRY|CATCH|ENDTRY|LAMBDA|ENDLAMBDA)\\b"
+						},
+						{
+							"name": "keyword.control.triggerreactor",
+							"match": "\\b(if|else|elseif|endif|is|while|endwhile|for|endfor|try|catch|endtry|lambda|endlambda)\\b"
+						},
+						{
+							"name": "keyword.control.ternary.java",
+							"match": "\\?|:"
+						}
+					]
+				},
+				{
+					"name": "keyword.operator.triggerreactor",
+					"match": "(===?|!=|<=|>=|<>|<|>)"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.triggerreactor",
@@ -24,6 +75,42 @@
 				{
 					"name": "constant.character.escape.triggerreactor",
 					"match": "\\\\."
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"match": "(?x)\n\\b(?<!\\$)\n0(x|X)\n(\n  (?<!\\.)[0-9a-fA-F]([0-9a-fA-F_]*[0-9a-fA-F])?[Ll]?(?!\\.)\n  |\n  (\n    [0-9a-fA-F]([0-9a-fA-F_]*[0-9a-fA-F])?\\.?\n    |\n    ([0-9a-fA-F]([0-9a-fA-F_]*[0-9a-fA-F])?)?\\.[0-9a-fA-F]([0-9a-fA-F_]*[0-9a-fA-F])?\n  )\n  [Pp][+-]?[0-9]([0-9_]*[0-9])?[FfDd]?\n)\n\\b(?!\\$)",
+					"name": "constant.numeric.hex.java"
+				},
+				{
+					"match": "\\b(?<!\\$)0(b|B)[01]([01_]*[01])?[Ll]?\\b(?!\\$)",
+					"name": "constant.numeric.binary.java"
+				},
+				{
+					"match": "\\b(?<!\\$)0[0-7]([0-7_]*[0-7])?[Ll]?\\b(?!\\$)",
+					"name": "constant.numeric.octal.java"
+				},
+				{
+					"match": "(?x)\n(?<!\\$)\n(\n  \\b[0-9]([0-9_]*[0-9])?\\.\\B(?!\\.)\n  |\n  \\b[0-9]([0-9_]*[0-9])?\\.([Ee][+-]?[0-9]([0-9_]*[0-9])?)[FfDd]?\\b\n  |\n  \\b[0-9]([0-9_]*[0-9])?\\.([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]\\b\n  |\n  \\b[0-9]([0-9_]*[0-9])?\\.([0-9]([0-9_]*[0-9])?)([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]?\\b\n  |\n  (?<!\\.)\\B\\.[0-9]([0-9_]*[0-9])?([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]?\\b\n  |\n  \\b[0-9]([0-9_]*[0-9])?([Ee][+-]?[0-9]([0-9_]*[0-9])?)[FfDd]?\\b\n  |\n  \\b[0-9]([0-9_]*[0-9])?([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]\\b\n  |\n  \\b(0|[1-9]([0-9_]*[0-9])?)(?!\\.)[Ll]?\\b\n)\n(?!\\$)",
+					"name": "constant.numeric.decimal.java"
+				}
+			]
+		},
+		"constants-and-special-vars": {
+			"patterns": [
+				{
+					"match": "\\b(true|false|null)\\b",
+					"name": "constant.language.java"
+				},
+				{
+					"match": "\\bthis\\b",
+					"name": "variable.language.this.java"
+				},
+				{
+					"match": "\\bsuper\\b",
+					"name": "variable.language.java"
 				}
 			]
 		}

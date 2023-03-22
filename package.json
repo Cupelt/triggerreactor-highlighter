@@ -2,9 +2,11 @@
   "name": "triggerreactor-highlighter",
   "displayName": "TriggerReactor Highlighter",
   "description": "",
-  "version": "0.0.1",
+  "icon": "icons/TRGLogo.png",
+  "version": "1.0.0",
+  "publisher": "Cupelt",
   "engines": {
-    "vscode": "^1.76.0"
+    "vscode": "*"
   },
   "categories": [
     "Programming Languages"
@@ -14,7 +16,11 @@
       "id": "triggerreactor",
       "aliases": ["TriggerReactor", "triggerreactor"],
       "extensions": [".trg"],
-      "configuration": "./language-configuration.json"
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "light": "./icons/TRGLogo.png",
+        "dark": "./icons/TRGLogo.png"
+      }
     }],
     "grammars": [{
       "language": "triggerreactor",
