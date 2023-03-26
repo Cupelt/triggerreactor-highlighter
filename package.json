@@ -1,12 +1,12 @@
 {
-  "name": "triggerreactor-highlighter",
-  "displayName": "TriggerReactor Highlighter",
+  "name": "triggerreactor-vecode",
+  "displayName": "TriggerReactor-VSCode",
   "description": "",
   "icon": "icons/TRGLogo.png",
   "version": "1.0.0",
   "publisher": "Cupelt",
   "activationEvents": [],
-  "repository": "https://github.com/Cupelt/triggerreactor-highlighter",
+  "repository": "https://github.com/Cupelt/triggerreactor-vscode",
   "engines": {
     "vscode": "*"
   },
