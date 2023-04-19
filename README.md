@@ -1,3 +1,3 @@
 # triggerreactor-vscode
 
-Trigger Reactor Helper in VSCode
+Trigger Reactor Helper
