@@ -14,6 +14,7 @@ All notable changes to the "TriggerReactor-VSCode" extension will be documented 
 
 - Add language highlighter `SYNC statements`
 - Add language highlighter `AS statements`
+- Add language highlighter `SYNC/ASYNC statements`
 - Add language highlighter `commant`
 
 - support folding
