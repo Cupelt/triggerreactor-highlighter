@@ -2,8 +2,6 @@
 
 All notable changes to the "TriggerReactor-VSCode" extension will be documented in this file.
 
-## [Unreleased]
-
 ## [1.0.0] - 2023-03-22
 
 ### Added
