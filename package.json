@@ -1,12 +1,11 @@
 {
-  "name": "triggerreactor-vecode",
+  "name": "triggerreactor-vscode",
   "displayName": "TriggerReactor-VSCode",
-  "description": "",
+  "description": "Support for TriggerReactor scripts",
   "icon": "icons/TRGLogo.png",
-  "version": "1.0.0",
-  "publisher": "Cupelt",
-  "activationEvents": [],
   "repository": "https://github.com/Cupelt/triggerreactor-vscode",
+  "version": "1.0.1-Release",
+  "publisher": "TriggerReactor",
   "engines": {
     "vscode": "*"
   },
@@ -15,8 +14,8 @@
   ],
   "contributes": {
     "languages": [{
-      "id": "triggerreactor",
-      "aliases": ["TriggerReactor", "triggerreactor"],
+      "id": "TriggerReactor",
+      "aliases": ["TriggerReactor", "trg"],
       "extensions": [".trg"],
       "configuration": "./language-configuration.json",
       "icon": {
@@ -25,9 +24,9 @@
       }
     }],
     "grammars": [{
-      "language": "triggerreactor",
-      "scopeName": "source.trg",
-      "path": "./syntaxes/triggerreactor.tmLanguage.json"
+      "language": "TriggerReactor",
+      "scopeName": "source.triggerreactor",
+      "path": "./syntaxes/TriggerReactor.tmLanguage.json"
     }]
   }
 }
