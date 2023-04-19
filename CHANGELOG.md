@@ -17,3 +17,7 @@ All notable changes to the "TriggerReactor-VSCode" extension will be documented 
 - Add language highlighter `commant`
 
 - support folding
+
+### Fixed
+
+- Fixed a `FINNALY` was not highlighted.
